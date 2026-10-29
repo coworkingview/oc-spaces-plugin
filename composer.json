@@ -1,0 +1,23 @@
+{
+    "name": "coworkingview/spaces-plugin",
+    "type": "october-plugin",
+    "description": "October CMS components that show coworking spaces, private offices and market rates for a city, with operator-published prices. No API key.",
+    "homepage": "https://coworkingview.com/en/mcp",
+    "keywords": ["october", "octobercms", "coworking", "office", "real-estate", "prices"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "CoworkingView",
+            "homepage": "https://coworkingview.com"
+        }
+    ],
+    "support": {
+        "issues": "https://github.com/coworkingview/oc-spaces-plugin/issues",
+        "source": "https://github.com/coworkingview/oc-spaces-plugin",
+        "docs": "https://coworkingview.com/en/mcp"
+    },
+    "require": {
+        "php": ">=8.0",
+        "composer/installers": "~1.0 || ^2.0"
+    }
+}

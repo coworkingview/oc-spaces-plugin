@@ -1,0 +1,25 @@
+{% if __SELF__.rows|length %}
+    <table class="coworkingview-rates">
+        <thead>
+            <tr>
+                <th scope="col">Workspace</th>
+                <th scope="col">Median per month</th>
+                <th scope="col">Spaces</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in __SELF__.rows %}
+                <tr>
+                    <td>{{ row.label }}</td>
+                    <td>{{ row.median }}</td>
+                    <td>{{ row.spaces }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    {% if __SELF__.property('showCredit') %}
+        <p class="coworkingview-credit">Data: <a href="https://coworkingview.com/en/tools/price-index">CoworkingView Price Index</a> (CC BY 4.0)</p>
+    {% endif %}
+{% elseif __SELF__.showError %}
+    <p class="coworkingview-error">CoworkingView: {{ __SELF__.error }}</p>
+{% endif %}

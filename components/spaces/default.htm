@@ -1,0 +1,17 @@
+{% if __SELF__.spaces|length %}
+    <ul class="coworkingview-spaces">
+        {% for space in __SELF__.spaces %}
+            <li class="coworkingview-space">
+                <a href="{{ space.url }}">{{ space.title }}</a>
+                {% if space.zone.name or space.city.name %}
+                    <span class="coworkingview-space__where">{{ [space.zone.name, space.city.name|trim]|filter(v => v)|join(', ') }}</span>
+                {% endif %}
+                {% if space.priceLabel %}
+                    <span class="coworkingview-space__price">{{ space.priceLabel }}</span>
+                {% endif %}
+            </li>
+        {% endfor %}
+    </ul>
+{% elseif __SELF__.showError %}
+    <p class="coworkingview-error">CoworkingView: {{ __SELF__.error }}</p>
+{% endif %}
